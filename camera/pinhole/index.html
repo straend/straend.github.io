@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.69.1" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Pinhole Camera :: fik1</title>
+
+    
+    <link href="/css/nucleus.css?1587557436" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1587557436" rel="stylesheet">
+    <link href="/css/hybrid.css?1587557436" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1587557436" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1587557436" rel="stylesheet">
+    <link href="/css/auto-complete.css?1587557436" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1587557436" rel="stylesheet">
+    <link href="/css/theme.css?1587557436" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1587557436" rel="stylesheet">
+    
+    <link href="/css/theme-fik1.css?1587557436" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1587557436"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/camera/pinhole/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/"><img src="/fik1.svg" width="300" height="100"></a>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1587557436"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1587557436"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/straend.github.io";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1587557436"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/posts/" title="Posts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/posts/">
+          Posts
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/posts/first-post/" title="First Post" class="dd-item ">
+        <a href="/posts/first-post/">
+        First Post
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/camera/" title="Cameras" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/camera/">
+          Cameras
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/camera/pinhole/" title="Pinhole Camera" class="dd-item active">
+        <a href="/camera/pinhole/">
+        Pinhole Camera
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/electronics/" title="Electronics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/electronics/">
+          Electronics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/electronics/serial-pill/" title="Serial Pill" class="dd-item ">
+        <a href="/electronics/serial-pill/">
+        Serial Pill
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>fik1</a> > <a href='/camera/'>Cameras</a> > Pinhole Camera
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Pinhole Camera
+            </h1>
+          
+
+        
+
+
+<h4 id="pinhole-diameter">Pinhole diameter</h4>
+<blockquote>
+<p>d = 2 * sqrt( F*λ )</p>
+</blockquote>
+<ul>
+<li>F = focal length, distance from pinhole to paper/film</li>
+<li>d = diameter</li>
+<li>λ = wavelength of light</li>
+<li>550nm is good for black and white</li>
+<li>optimally less than 1/100 of focal length</li>
+<li>vingetting when diameter is near the thickness of material</li>
+</ul>
+<h4 id="f-number">f-number</h4>
+<blockquote>
+<p>f-number = (distance to film/paper) / (pinhole diameter)</p>
+</blockquote>
+<h4 id="exposure-time">Exposure time</h4>
+<p>measure with something lets say that we get <strong>1/60</strong> with <strong>f22</strong></p>
+<p>let&rsquo;s calculate with pihole f-number 100</p>
+<ul>
+<li>light sensitivity change = (target f / measured f)²</li>
+<li>ex (100/22)² = <strong>20.66</strong></li>
+</ul>
+<p>exposure time is then <strong>1/60 * 20.66 = 0.344</strong> seconds</p>
+<p>but remember we probably can&rsquo;t measure with as low ISO as the paper</p>
+<p>which probably is between 2 and 10, so we have to count the steps and adjust accordingly</p>
+<table>
+<thead>
+<tr>
+<th>ISO</th>
+<th></th>
+<th></th>
+<th>speeds</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>12</td>
+<td>25</td>
+<td>50</td>
+<td>100</td>
+</tr>
+<tr>
+<td>200</td>
+<td>400</td>
+<td>800</td>
+<td>1600</td>
+<td>3200</td>
+<td>6400</td>
+</tr>
+</tbody>
+</table>
+<h4 id="reciprocity">Reciprocity</h4>
+<p>At least with ILFORD papers, there is minimal need for longer exposure due to reciprocitation</p>
+<p><a href="https://www.ilfordphoto.com/faqs/photographic-paper-faqs/">ILFORD Paper FAQ</a></p>
+<blockquote>
+<p>For our papers - provided the exposures are within say a couple of hours, there is no real adjustment you&rsquo;d need to make to whatever your initial metered reading is telling you to expose to.</p>
+</blockquote>
+<p><a href="https://github.com/ehagan/pinhole-camera-exposure-time">https://github.com/ehagan/pinhole-camera-exposure-time</a></p>
+<h4 id="35mm-equivalent-focal-length">35mm equivalent focal length</h4>
+<p>Diagonal of &lsquo;normal&rsquo; 35mm film is 43.3mm, 36mm wide and 24mm tall</p>
+<table>
+<thead>
+<tr>
+<th>image size</th>
+<th>diagonal</th>
+<th>width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4:3 width</td>
+<td>34.6 f/w</td>
+<td>36 f/w</td>
+</tr>
+<tr>
+<td>4:3 diagonal</td>
+<td>43.3 f/d</td>
+<td>45 f/d</td>
+</tr>
+<tr>
+<td>3:2 width</td>
+<td>36 f/w</td>
+<td>36 f/w</td>
+</tr>
+<tr>
+<td>3:2 diagonal</td>
+<td>43.3 f/d</td>
+<td>43.3 f/d</td>
+</tr>
+<tr>
+<td>(Table from <a href="https://en.wikipedia.org/wiki/35_mm_equivalent_focal_length#Conversions">Wikipedia</a>)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For a <strong>5x7</strong> paper (diagonal 218.7mm) and a true focal length of <strong>100mm</strong> we&rsquo;ll get the following</p>
+<p><strong>43.3 100/218.7 = 19.8</strong></p>
+<p>or with a <strong>4x6</strong> paper diagonal (127.6mm)</p>
+<p><strong>43.3 100/127.6 = 33</strong></p>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Pinhole_camera">Wikipedia</a></li>
+<li><a href="https://www.ilfordphoto.com/multigrade-iv-rc-deluxe-glossy-sheets">ILFORD MULTIGRADE RC</a></li>
+<li><a href="https://www.ilfordphoto.com/multigrade-fb-classic-glossy-sheets">ILFORD MULTIGRADE FB CLASSIC</a></li>
+</ul>
+
+<section class="attachments ">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		ILFORD Technical data
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/Black%20and%20White%20Developers.pdf" >
+					Black and White Developers.pdf
+				</a>
+				(177 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/Contrast%20Control.pdf" >
+					Contrast Control.pdf
+				</a>
+				(283 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/MG4RC_vs_MGRC.pdf" >
+					MG4RC_vs_MGRC.pdf
+				</a>
+				(155 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/MULTIGRADE_FB_CLASSIC.pdf" >
+					MULTIGRADE_FB_CLASSIC.pdf
+				</a>
+				(51 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/MULTIGRADE_RC.pdf" >
+					MULTIGRADE_RC.pdf
+				</a>
+				(274 ko)
+			</li>
+		
+	
+		
+		
+			<li>
+				<a href="/camera/pinhole.files/Processing.pdf" >
+					Processing.pdf
+				</a>
+				(163 ko)
+			</li>
+		
+	
+	<div>
+	
+</section>
+
+
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/camera/" title="Cameras"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/electronics/" title="Electronics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1587557436"></script>
+    <script src="/js/perfect-scrollbar.min.js?1587557436"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1587557436"></script>
+    <script src="/js/jquery.sticky.js?1587557436"></script>
+    <script src="/js/featherlight.min.js?1587557436"></script>
+    <script src="/js/highlight.pack.js?1587557436"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1587557436"></script>
+    <script src="/js/learn.js?1587557436"></script>
+    <script src="/js/hugo-learn.js?1587557436"></script>
+
+    <link href="/mermaid/mermaid.css?1587557436" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1587557436"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+
