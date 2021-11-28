@@ -1,48 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://straend.github.io/</loc>
-    <lastmod>2020-01-15T09:33:22+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://straend.github.io/posts/first-post/</loc>
-    <lastmod>2020-01-15T09:33:22+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://straend.github.io/posts/</loc>
-    <lastmod>2020-01-15T09:33:22+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://straend.github.io/camera/</loc>
-    <lastmod>2020-01-13T19:29:08+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://straend.github.io/camera/pinhole/</loc>
-    <lastmod>2020-01-13T19:29:08+02:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://straend.github.io/electronics/</loc>
-    <lastmod>2020-01-13T18:56:03+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-11-27T18:56:03+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/electronics/esp32/</loc>
+    <lastmod>2021-11-27T18:56:03+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/electronics/esphome-remote/</loc>
+    <lastmod>2021-11-27T18:56:03+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/</loc>
+    <lastmod>2021-11-27T18:56:03+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/electronics/mysensors/</loc>
+    <lastmod>2020-08-04T18:56:03+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/posts/first-post/</loc>
+    <lastmod>2020-01-15T09:33:22+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/posts/</loc>
+    <lastmod>2020-01-15T09:33:22+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/camera/</loc>
+    <lastmod>2020-01-13T19:29:08+02:00</lastmod>
+  </url><url>
+    <loc>https://straend.github.io/camera/pinhole/</loc>
+    <lastmod>2020-01-13T19:29:08+02:00</lastmod>
+  </url><url>
     <loc>https://straend.github.io/electronics/serial-pill/</loc>
     <lastmod>2020-01-13T18:56:03+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://straend.github.io/electronics/esp8266/</loc>
+  </url><url>
     <loc>https://straend.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://straend.github.io/tags/</loc>
   </url>
-  
 </urlset>

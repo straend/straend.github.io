@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: fik1</title>
+    <title> :: fik1</title>
 
     
     <link href="/css/nucleus.css?1638111792" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/electronics/esp8266/">
     <nav id="sidebar" class="">
 
 
@@ -88,8 +88,8 @@
   
     
     <li data-nav-id="/electronics/" title="Electronics" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/electronics/">
@@ -198,7 +198,7 @@
  
   
     
-      <li data-nav-id="/electronics/esp8266/" title="" class="dd-item ">
+      <li data-nav-id="/electronics/esp8266/" title="" class="dd-item active">
         <a href="/electronics/esp8266/">
         
         
@@ -228,7 +228,7 @@
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
         
-        active
+        
         
         ">
       <a href="/posts/">
@@ -283,7 +283,7 @@
     
     <li data-nav-id="/camera/" title="Cameras" class="dd-item
         
-        active
+        
         
         ">
       <a href="/camera/">
@@ -372,7 +372,13 @@
             
           
           
-            <a href='/'>fik1</a> > Categories
+            
+            
+          
+          
+            <a href='/'>fik1</a> > <a href='/electronics/'>Electronics</a> > 
+          
+        
           
         
           
@@ -383,7 +389,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#rust">Rust</a>
+      <ul>
+        <li><a href="#embedded">Embedded</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -399,24 +413,62 @@
           
             <h1>
               
-                category ::
               
-              Categories
             </h1>
           
 
         
 
 
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th>RUN</th>
+<th>PROGRAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">EN</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:right">RST</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:right">GPIO 0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align:right">GPIO 15</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rust">Rust</h2>
+<p>Install rust</p>
+<p><a href="https://www.rust-lang.org/tools/install">https://www.rust-lang.org/tools/install</a>
+curl &ndash;proto &lsquo;=https&rsquo; &ndash;tlsv1.2 -sSf <a href="https://sh.rustup.rs">https://sh.rustup.rs</a> | sh</p>
+<h3 id="embedded">Embedded</h3>
+<p><a href="https://docs.rust-embedded.org/book/intro/install.html">https://docs.rust-embedded.org/book/intro/install.html</a></p>
+<pre><code>    rustup target add thumbv7em-none-eabi
+    cargo install cargo-binutils
+    rustup component add llvm-tools-preview
+    cargo install cargo-generate
+</code></pre>
+<p><a href="https://github.com/knurling-rs/probe-run">https://github.com/knurling-rs/probe-run</a></p>
+<pre><code>   cargo install probe-run
+</code></pre>
+<p>Don&rsquo;t include probe-run in applications config</p>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -451,8 +503,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -466,6 +516,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -531,6 +584,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -549,6 +603,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -618,8 +675,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/electronics/serial-pill/" title="Serial Pill"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/electronics/" title="Electronics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/posts/" title="Posts" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -651,3 +710,4 @@
 
   </body>
 </html>
+

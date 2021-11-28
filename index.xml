@@ -6,10 +6,39 @@
     <description>Recent content on fik1</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2020 09:33:22 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 27 Nov 2021 18:56:03 +0200</lastBuildDate><atom:link href="https://straend.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP32</title>
+      <link>https://straend.github.io/electronics/esp32/</link>
+      <pubDate>Sat, 27 Nov 2021 18:56:03 +0200</pubDate>
+      
+      <guid>https://straend.github.io/electronics/esp32/</guid>
+      <description>ESP startup ESP32-WROOM-32
+   Pin RUN PROGRAM Notes     EN 1 1    GPIO0 1 0 Has Pullup   GPIO2 x 0     </description>
+    </item>
     
-	<atom:link href="https://straend.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESPHome</title>
+      <link>https://straend.github.io/electronics/esphome-remote/</link>
+      <pubDate>Sat, 27 Nov 2021 18:56:03 +0200</pubDate>
+      
+      <guid>https://straend.github.io/electronics/esphome-remote/</guid>
+      <description>Code snippet that reads the log from ESPHome Remote Receiver with name of key added at end of line.
+[00:37:53][D][remote.samsung:060]: Received Samsung: data=0xE0E0B44B, nbits=32 INFO
+Will create an entry like
+- name: Samsung INFO platform: remote_receiver samsung: data: 3772822603 Full config for a remote at https://github.com/straend/HASS-ESPHome/blob/main/remote.yaml
+import re import yaml input_file = &amp;#34;samsung_remote.txt&amp;#34; output_file = &amp;#34;samsung.yaml&amp;#34; x = re.compile(r&amp;#34;(?P&amp;lt;code&amp;gt;0x[A-Z0-9]+).+ (?P&amp;lt;name&amp;gt;.+)&amp;#34;) inputs = [] for l in open(input_file).readlines(): m = x.search(l) inputs.</description>
+    </item>
     
+    <item>
+      <title>MySensors</title>
+      <link>https://straend.github.io/electronics/mysensors/</link>
+      <pubDate>Tue, 04 Aug 2020 18:56:03 +0200</pubDate>
+      
+      <guid>https://straend.github.io/electronics/mysensors/</guid>
+      <description>git clone https://github.com/mysensors/MySensors.git --branch master cd MySensors  SensorBender PiGate Pins
+   (pin no)rPI PiGate     15 nRF24 IRQ   22 nRF24 CE   24 nRF24 CS   Lora    13 RFM95 IRQ (DIO 0)   26 RFM95 CS   Common    19 MOSI   21 MISO   23 SCK    Build gateway for nrf24</description>
+    </item>
     
     <item>
       <title>First Post</title>
@@ -46,6 +75,19 @@ boot0 = 1 boot1 = 0  and connect with a serial adapter
 tx = A10 rx = A9  then we need something to flash with, stm32loader is a good choice
 pip install pyserial stm32loader
 then we can flash our code, choose correct COM port</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://straend.github.io/electronics/esp8266/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://straend.github.io/electronics/esp8266/</guid>
+      <description>RUN PROGRAM     EN 1 1   RST 1 1   GPIO 0 1 0   GPIO 15 0 0    Rust Install rust
+https://www.rust-lang.org/tools/install curl &amp;ndash;proto &amp;lsquo;=https&amp;rsquo; &amp;ndash;tlsv1.2 -sSf https://sh.rustup.rs | sh
+Embedded https://docs.rust-embedded.org/book/intro/install.html
+ rustup target add thumbv7em-none-eabi cargo install cargo-binutils rustup component add llvm-tools-preview cargo install cargo-generate  https://github.com/knurling-rs/probe-run
+ cargo install probe-run  Don&amp;rsquo;t include probe-run in applications config</description>
     </item>
     
   </channel>

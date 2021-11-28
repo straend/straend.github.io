@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: fik1</title>
+    <title>ESPHome :: fik1</title>
 
     
     <link href="/css/nucleus.css?1638111792" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/electronics/esphome-remote/">
     <nav id="sidebar" class="">
 
 
@@ -88,8 +88,8 @@
   
     
     <li data-nav-id="/electronics/" title="Electronics" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/electronics/">
@@ -135,7 +135,7 @@
  
   
     
-      <li data-nav-id="/electronics/esphome-remote/" title="ESPHome" class="dd-item ">
+      <li data-nav-id="/electronics/esphome-remote/" title="ESPHome" class="dd-item active">
         <a href="/electronics/esphome-remote/">
         ESPHome
         
@@ -228,7 +228,7 @@
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
         
-        active
+        
         
         ">
       <a href="/posts/">
@@ -283,7 +283,7 @@
     
     <li data-nav-id="/camera/" title="Cameras" class="dd-item
         
-        active
+        
         
         ">
       <a href="/camera/">
@@ -372,7 +372,13 @@
             
           
           
-            <a href='/'>fik1</a> > Categories
+            
+            
+          
+          
+            <a href='/'>fik1</a> > <a href='/electronics/'>Electronics</a> > ESPHome
+          
+        
           
         
           
@@ -383,7 +389,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -399,24 +405,45 @@
           
             <h1>
               
-                category ::
-              
-              Categories
+              ESPHome
             </h1>
           
 
         
 
 
+<p>Code snippet that reads the log from ESPHome <a href="https://esphome.io/components/remote_receiver.html">Remote Receiver</a> with name of key added at end of line.</p>
+<p><code>[00:37:53][D][remote.samsung:060]: Received Samsung: data=0xE0E0B44B, nbits=32 INFO</code></p>
+<p>Will create an entry like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Samsung INFO</span>
+    <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">remote_receiver</span>
+    <span style="color:#f92672">samsung</span>:
+      <span style="color:#f92672">data</span>: <span style="color:#ae81ff">3772822603</span>
+</code></pre></div><p>Full config for a remote at <a href="https://github.com/straend/HASS-ESPHome/blob/main/remote.yaml">https://github.com/straend/HASS-ESPHome/blob/main/remote.yaml</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> re
+<span style="color:#f92672">import</span> yaml
 
+input_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;samsung_remote.txt&#34;</span>
+output_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;samsung.yaml&#34;</span>
 
+x <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;(?P&lt;code&gt;0x[A-Z0-9]+).+ (?P&lt;name&gt;.+)&#34;</span>)
 
-<ul>
-	
-</ul>
+inputs <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> l <span style="color:#f92672">in</span> open(input_file)<span style="color:#f92672">.</span>readlines():
+    m <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span>search(l)
+    inputs<span style="color:#f92672">.</span>append({
+        <span style="color:#e6db74">&#39;platform&#39;</span>: <span style="color:#e6db74">&#39;remote_receiver&#39;</span>,
+        <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#34;Samsung </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(m<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#39;name&#39;</span>)),
+        <span style="color:#e6db74">&#39;samsung&#39;</span>: {
+            <span style="color:#e6db74">&#39;data&#39;</span>: int(m<span style="color:#f92672">.</span>group(<span style="color:#e6db74">&#39;code&#39;</span>), <span style="color:#ae81ff">16</span>)
+        }
+    })
 
+<span style="color:#66d9ef">with</span> open(output_file, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+    yaml<span style="color:#f92672">.</span>dump({<span style="color:#e6db74">&#39;binary_sensor&#39;</span>: inputs}, f)
+</code></pre></div>
 
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -451,8 +478,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -466,6 +491,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -483,6 +511,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -498,6 +527,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -618,8 +650,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/electronics/esp32/" title="ESP32"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/electronics/" title="Electronics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/electronics/mysensors/" title="MySensors" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -651,3 +685,4 @@
 
   </body>
 </html>
+

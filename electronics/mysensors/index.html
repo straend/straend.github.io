@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: fik1</title>
+    <title>MySensors :: fik1</title>
 
     
     <link href="/css/nucleus.css?1638111792" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/electronics/mysensors/">
     <nav id="sidebar" class="">
 
 
@@ -88,8 +88,8 @@
   
     
     <li data-nav-id="/electronics/" title="Electronics" class="dd-item
+        parent
         
-        active
         
         ">
       <a href="/electronics/">
@@ -156,7 +156,7 @@
  
   
     
-      <li data-nav-id="/electronics/mysensors/" title="MySensors" class="dd-item ">
+      <li data-nav-id="/electronics/mysensors/" title="MySensors" class="dd-item active">
         <a href="/electronics/mysensors/">
         MySensors
         
@@ -228,7 +228,7 @@
     
     <li data-nav-id="/posts/" title="Posts" class="dd-item
         
-        active
+        
         
         ">
       <a href="/posts/">
@@ -283,7 +283,7 @@
     
     <li data-nav-id="/camera/" title="Cameras" class="dd-item
         
-        active
+        
         
         ">
       <a href="/camera/">
@@ -372,7 +372,13 @@
             
           
           
-            <a href='/'>fik1</a> > Categories
+            
+            
+          
+          
+            <a href='/'>fik1</a> > <a href='/electronics/'>Electronics</a> > MySensors
+          
+        
           
         
           
@@ -383,7 +389,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -399,24 +405,82 @@
           
             <h1>
               
-                category ::
-              
-              Categories
+              MySensors
             </h1>
           
 
         
 
 
+<pre><code>git clone https://github.com/mysensors/MySensors.git --branch master
+cd MySensors
+</code></pre>
+<p>SensorBender PiGate Pins</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">(pin no)<!-- raw HTML omitted -->rPI</th>
+<th style="text-align:left">PiGate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">15</td>
+<td style="text-align:left">nRF24 IRQ</td>
+</tr>
+<tr>
+<td style="text-align:right">22</td>
+<td style="text-align:left">nRF24 CE</td>
+</tr>
+<tr>
+<td style="text-align:right">24</td>
+<td style="text-align:left">nRF24 CS</td>
+</tr>
+<tr>
+<td style="text-align:right">Lora</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">13</td>
+<td style="text-align:left">RFM95 IRQ (DIO 0)</td>
+</tr>
+<tr>
+<td style="text-align:right">26</td>
+<td style="text-align:left">RFM95 CS</td>
+</tr>
+<tr>
+<td style="text-align:right">Common</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">19</td>
+<td style="text-align:left">MOSI</td>
+</tr>
+<tr>
+<td style="text-align:right">21</td>
+<td style="text-align:left">MISO</td>
+</tr>
+<tr>
+<td style="text-align:right">23</td>
+<td style="text-align:left">SCK</td>
+</tr>
+</tbody>
+</table>
+<p>Build gateway for nrf24</p>
+<pre><code>./configure --my-transport=rf24 --my-gateway=mqtt --my-controller-ip-address=10.42.0.101 --my-mqtt-publish-topic-prefix=mys-out --my-mqtt-subscribe-topic-prefix=mys-in --my-mqtt-client-id=mysgwt1 -my-rf24-ce-pin=22 -my-rf24-cs-pin=24 -my-rf24-irq-pin=15
+
+make
+mv bin/mysgw ../mysgw-nrf24
+</code></pre>
+<p>Build gateway for rfm95</p>
+<pre><code>./configure --my-transport=rfm95 --my-gateway=mqtt --my-controller-ip-address=10.42.0.101 --my-mqtt-publish-topic-prefix=mys-out --my-mqtt-subscribe-topic-prefix=mys-in --my-mqtt-client-id=mysgwt8 --my-rfm95-cs-pin=26 --my-rfm95-irq-pin=13 --my-rfm95-frequency=434
+
+make
+mv bin/mysgw ../mysgw-rfm95
+</code></pre>
 
 
-
-<ul>
-	
-</ul>
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -451,8 +515,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -466,6 +528,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -499,6 +564,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -514,6 +580,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -618,8 +687,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/electronics/esphome-remote/" title="ESPHome"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/electronics/" title="Electronics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/electronics/serial-pill/" title="Serial Pill" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -651,3 +722,4 @@
 
   </body>
 </html>
+
